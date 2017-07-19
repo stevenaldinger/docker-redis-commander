@@ -1,8 +1,5 @@
 #!/bin/sh
 
-# if command starts with -- skip init script
-[ "${1}" = '--' ] && exec "${@:2}"
-
 # if REDIS_HOSTS isn't set just run the script
 [ -z "${REDIS_HOSTS}" ] && exec node /src/redis-commander/bin/redis-commander "$@"
 
